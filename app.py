@@ -21,6 +21,17 @@ class Todo(db.Model):
     def __repr__(self):
         return '<Task %r>' % self.id
 
+class Todo2(db.Model):
+    date = datetime.now(tz=pytz.utc) ###################################################################################################
+    date = date.astimezone(timezone('US/Pacific')) #####################################################################################
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(200), nullable=False)
+    date_created = db.Column(db.DateTime, default=date) # default=datetime.utcnow not accurate. Testing to see if updated line is more accurate.
+
+
+
+    def __repr__(self):
+        return '<Task %r>' % self.id
 
 @app.route('/', methods=['POST', 'GET'])
 def index():

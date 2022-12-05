@@ -10,10 +10,16 @@ h1 {
     border: 3px solid navy;
 }
 
-table, th, td {
+table, th {
     border: 2px solid navy;
     border-collapse: collapse;
     background-color: rgb(231, 231, 231);
+    padding: 10px;
+    width: 500px;
+}
+td {
+    border: 2px solid navy;
+    border-collapse: collapse;
     padding: 10px;
     width: 500px;
 }
@@ -28,4 +34,9 @@ form {
 .center {
     margin: auto;
     width: 500px;
+}
+
+.dropzone {
+    background-color: lightgreen;
+    padding: 10px;
 }
